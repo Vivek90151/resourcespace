@@ -3,7 +3,7 @@
 define('RESOURCESPACE_BASE_PATH', dirname(__DIR__));
 
 // current upgrade level of ResourceSpace (used for migration scripts, will set sysvar using this if not already defined)
-define('SYSTEM_UPGRADE_LEVEL', 30);
+define('SYSTEM_UPGRADE_LEVEL', 31);
 
 // PHP VERSION AND MINIMUM SUPPORTED
 if (!defined('PHP_VERSION_ID')) {
@@ -203,12 +203,6 @@ define('LINK_PLUS_CIRCLE', '<i aria-hidden="true" class="icon-circle-plus"></i>&
 define('LINK_CHEVRON_RIGHT', '<i aria-hidden="true" class="icon-chevron-right"></i>&nbsp;');
 define('UPLOAD_ICON', '<i aria-hidden="true" class="icon-upload"></i>&nbsp;');
 define('CONTRIBUTIONS_ICON', '<i aria-hidden="true" class="icon-user-round-plus"></i>&nbsp;');
-define('DASH_ICON', '<i aria-hidden="true" class="icon-layout-dashboard"></i>&nbsp;');
-define('FEATURED_COLLECTION_ICON', '<i aria-hidden="true" class="icon-folder"></i>&nbsp;');
-define('RECENT_ICON', '<i aria-hidden="true" class="icon-clock"></i>&nbsp;');
-define('HELP_ICON', '<i aria-hidden="true" class="icon-book-marked"></i>&nbsp;');
-define('HOME_ICON', '<i aria-hidden="true" class="icon-house"></i>&nbsp;');
-define('SEARCH_ICON', '<i class="icon-search" aria-hidden="true"></i>&nbsp;');
 define('ICON_EDIT', '<i class="icon-pencil" aria-hidden="true"></i>&nbsp;');
 define('ICON_REMOVE', '<i class="icon-circle-minus" aria-hidden="true"></i>&nbsp;');
 define('ICON_FOLDER', '<i class="icon-folder" aria-hidden="true"></i>&nbsp;');
@@ -914,7 +908,7 @@ const COLLECTION_FRAME_HEIGHT = 153;
 // Default lifetime in days of a temporary download file created by the job queue. After this time it will be deleted by another job
 const DOWNLOAD_FILE_LIFETIME = 14;
 
-$max_collection_thumbs = 150;
+$max_collection_thumbs = 100;
 
 // Define languages available
 $languages["en"] = "International English";
