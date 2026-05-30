@@ -1642,7 +1642,6 @@ input.contactadminbutton  {
     container-type: inline-size;
     
     padding-top: var(--space-24);
-    float: left;
     display: flex;
     width: 100%;
     max-width: 1376px;
@@ -1652,6 +1651,7 @@ input.contactadminbutton  {
     gap: var(--space-32);
     background-color: var(--colour-surface-view-background);
     justify-content: center;
+    margin: 0 auto;
 }
 
 #HomePanelContainer a {-webkit-user-drag: none;}
@@ -2504,6 +2504,9 @@ p.LoginLinks {
 #LoginHeader {
     border-radius: 6px;
     margin-bottom: var(--space-8);
+}
+#LoginHeader img{
+    max-width: 200px;
 }
 .login-welcome-text {
     padding-bottom: var(--form-field-margin-bottom);
@@ -3807,6 +3810,7 @@ button[data-menu-trigger-close] {
     padding-left: var(--space-12);
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLWRvd24taWNvbiBsdWNpZGUtY2hldnJvbi1kb3duIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYgOSA2IDYgNi02IiBzdHJva2U9IiM0YTRjNDgiLz48L3N2Zz4K);
     background-position: top var(--space-12) right var(--space-12);
+    background-color: var(--form-form-field-background);
     margin: 0;
 
     /* Prevent long option values from overlapping with the background image (our custom dropdown arrow) */
@@ -3830,6 +3834,13 @@ button[data-menu-trigger-close] {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
+    background-color: var(--form-form-field-background);
+}
+
+.field-input input[type="text"]:focus,
+.field-input input[type="password"]:focus,
+.field-input textarea:focus {
+    background-color: var(--colour-surface-50);
 }
 
 .field-input textarea { 
@@ -3897,6 +3908,7 @@ button[data-menu-trigger-close] {
 .select2-container--default .select2-selection--multiple,
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 1px solid var(--form-field-border);
+    background-color: var(--form-form-field-background);
 }
 .select2-selection.select2-selection--multiple {
     /* The padding is accounting for the margin of .select2-container--default .select2-selection--multiple .select2-selection__choice */
@@ -3912,6 +3924,10 @@ button[data-menu-trigger-close] {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tdXAtaWNvbiBsdWNpZGUtY2hldnJvbi11cCI+PHBhdGggZD0ibTE4IDE1LTYtNi02IDYiLz48L3N2Zz4=);
 }
 
+.select2-selection.select2-selection--multiple:has(> .select2-selection__rendered:empty) {
+    background-color: var(--colour-surface-50);
+}
+
 .select2-container .select2-selection--multiple .select2-selection__rendered {
     margin: unset;
 }
@@ -3922,10 +3938,14 @@ button[data-menu-trigger-close] {
     text-align: initial;
 }
 
+.select2-container--default .select2-results > .select2-results__options {
+    background-color: var(--form-form-field-background);
+}
+
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable,
 .select2-container--default .select2-results__option--selected {
-    background-color: var(--colour-brand-primary-lightest);
-    color: var(--colour-brand-primary-dark);
+    background-color: var(--form-form-chip-background);
+    color: var(--form-form-chip-stroke);
 }
 
 .select2-container--default .select2-results__option--selected {
@@ -3941,7 +3961,7 @@ button[data-menu-trigger-close] {
     top: 50%;
     transform: translateY(-50%);
     content: "";
-    background-color: var(--colour-brand-primary-dark);
+    background-color: var(--form-form-chip-stroke);
     -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=) center/contain no-repeat;
     mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=) center/contain no-repeat;
 }
@@ -3991,8 +4011,12 @@ button[data-menu-trigger-close] {
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover,
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
-    background-color: var(--form-form-chip-stroke);
+    background-color: var(--colour-brand-primary-default);
     color: var(--colour-global-white);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover + .select2-selection__choice__display {
+    background-color: var(--colour-surface-50);
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove::before {
@@ -4720,35 +4744,6 @@ header.LoginHeader {
     font-weight: 500;
     line-height: 100%; /* 18px */
 }
-
-.PoweredByPanel {
-    /* padding: 0 var(--space-16) var(--space-36) var(--space-16); */
-    padding-bottom: var(--space-36);
-    color: var(--colour-surface-600);
-}
-
-.PoweredByPanel > a {
-    display: flex;
-    height: 25px;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-12);
-    text-decoration: underline;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 21px */
-}
-
-.PoweredByPanel > a:hover {
-    color: var(--colour-surface-800);
-}
-
-.PoweredByPanel > a > svg {
-    height: 25px;
-    width: auto;
-}
-
 
 /* ===== Responsive layouts ===== */
 /* ===== Breakpoints =====
