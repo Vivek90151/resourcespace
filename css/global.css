@@ -414,7 +414,7 @@ button, input[type=submit], input[type=button], .RecordPanel .RecordDownloadSpac
 }
 .tile-desc {
     display: flex;
-    padding: var(--space-24) var(--space-16) var(--space-16) var(--space-16);
+    padding: var(--space-16);
     flex-direction: column;
     align-items: flex-start;
     flex: 1 0 0;
@@ -570,13 +570,16 @@ button, input[type=submit], input[type=button], .RecordPanel .RecordDownloadSpac
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 0
+    margin: 0;
+    gap: var(--space-8);
+    padding-bottom: 0;
 }
 .tile-graph-legend li {
     gap: var(--space-8);
     display: flex;
     width: 100%;
     align-items: flex-start;
+    padding-bottom: 0;
 }
 .tile-graph-legend-bullet {
     width: 12px;
@@ -1664,9 +1667,6 @@ input.contactadminbutton  {
 .HomePanelPromotedIN h3 {
     padding-top:20px;
 }
-a.HomePanel:hover {
-    border-radius:8px;
-}
 
 p.tile_corner_box {
     position: absolute;
@@ -2292,13 +2292,13 @@ div.MessageBox a {
     text-underline-position: from-font;
 }
 .fc-breadcrumbs .BreadcrumbsBox {
-    width: 100%;
-    padding: 0 var(--space-272);
+    width: 1376px;
+    padding: 0;
     background-color: unset;
     color: var(--colour-brand-primary-default);
 }
 .fc-breadcrumbs .BreadcrumbsBoxTheme {
-    margin: 0;
+    margin: 0 auto;
 }
 .fc-breadcrumbs .BreadcrumbsBox.BreadcrumbsBoxTheme .top-right-menu i {
     vertical-align: middle;
@@ -2307,6 +2307,11 @@ div.MessageBox a {
 .fc-breadcrumbs .BreadcrumbsBoxTheme.BreadcrumbsBox a:active,
 .fc-breadcrumbs .BreadcrumbsBoxTheme.BreadcrumbsBox a:link{
     color: var(--colour-brand-primary-default);
+}
+
+.fc-breadcrumbs .icon-chevron-right {
+    width: var(--space-16);
+    height: var(--space-16);
 }
 
 .FeaturedSimpleLinks {
@@ -2815,7 +2820,11 @@ a.Enabled, a:visited.Enabled {
     margin: 0 0 8px 0;
     padding: 0 0 8px 0;
 }
-.BreadcrumbsBox > .SearchBreadcrumbs{
+.BreadcrumbsBox > .SearchBreadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    align-items: center;
     margin: 0;
 }
 
@@ -3357,6 +3366,7 @@ input[type="text"]#iconpicker-input {
 #HomeSiteText h1 {
     padding-bottom: var(--space-12, 12px);
     font-size: 48px;
+    text-wrap: balance;
 }
 
 #HomeSiteText p {
@@ -4342,6 +4352,10 @@ header.LoginHeader {
     max-width: 200px;
     max-height: 48px;
     object-fit: contain;
+}
+
+#header-container .logo a {
+    align-content: center;
 }
 
 #header-container .header-search-field {
@@ -6171,7 +6185,10 @@ body:has(.collection-bar-holder.state-thumbs) #UICenter {
 }
 
 @media(max-width: 1420px) {
-    .page-title {
+    .fc-breadcrumbs .BreadcrumbsBoxTheme {
+        width: 100%;
+    }
+    .page-title, .fc-breadcrumbs {
         padding-left: 16px;
         padding-right: 16px;
         width: unset;
