@@ -83,11 +83,6 @@ tr[id^="ResourceShell"].Selected { background-color: #d5eafa; /* Used a tint of 
 .ImageWrapper {background-color: var(--colour-neutral-100);}
 
 /* Collection Bar */
-.CollectBack {color:#E0E0E0;background: #2b2b2b;}
-.CollectBack a:link, .CollectBack a:visited, .CollectBack a:active,.CollectBack h2 {color:#E0E0E0;}
-.CollectBack a:hover{color:#FFF;}
-.CollectBack h2 a:link, .CollectBack h2 a:visited, .CollectBack h2 a:active, .CollectBack h2 a:hover {color:white;}
-#CollectionMinRightNav li {border-left:1px solid #E0E0E0;}
 .CollectionPanelShell {background-color: #444;}
 
 /* Related resources */
@@ -365,16 +360,6 @@ input:checked + .customFieldLabel, .keywordselected {
     font-weight: bold;
 }
 
-/* Firefox on macOS optgroup background styling fix */
-/* @supports (-moz-osx-font-smoothing: auto) {
-    #CollectionDiv select optgroup {
-        color: initial;
-    }
-    #CollectionDiv select optgroup option {
-        color: #fff;    
-    }
-} */
-
 /* Scrollbar styling */
 ::-webkit-scrollbar:vertical {width:12px;}
 ::-webkit-scrollbar:horizontal {height:12px;}
@@ -651,6 +636,9 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
 
 a.HomePanel:hover {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+}
+a.HomePanel:active {
+    opacity:initial;
 }
 
 .FeaturedSimpleTileImage img.TileGroupImageBase {box-shadow: 0 0 25px #000; }
