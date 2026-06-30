@@ -2,23 +2,38 @@ FROM php:8.2-apache
 
 WORKDIR /var/www/html
 
-# System packages
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
     zip \
     libzip-dev \
-    && docker-php-ext-install zip mysqli pdo pdo_mysql \
-    && a2enmod rewrite
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    libicu-dev \
+    libonig-dev \
+    libxml2-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+       mysqli \
+       pdo \
+       pdo_mysql \
+       zip \
+       gd \
+       exif \
+       intl \
+       mbstring \
+    && a2enmod rewrite \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copy project
 COPY . .
 
-# Install PHP dependencies
-RUN composer install --no-interaction --prefer-dist --no-dev || true
+RUN composer install --no-dev --prefer-dist --no-interaction
+
+RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 
